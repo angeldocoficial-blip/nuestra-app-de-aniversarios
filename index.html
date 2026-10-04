@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fff7fa">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Nuestra app">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <title>Nuestra app de aniversarios</title>
+</head>
+<body>
+  <main class="app">
+    <section id="home" class="screen active">
+      <div class="heart">♥</div>
+      <p class="eyebrow">NUESTRA HISTORIA</p>
+      <h1><span id="displayName1">Angel</span> &amp; <span id="displayName2">Ashley</span></h1>
+      <p class="subtitle">Un amor, una historia y muchos aniversarios por celebrar.</p>
+
+      <div class="card">
+        <p class="label">Llevamos juntos</p>
+        <div class="counter">
+          <div><strong id="months">0</strong><span>meses</span></div>
+          <div><strong id="days">0</strong><span>días</span></div>
+        </div>
+        <p id="sinceText" class="small"></p>
+      </div>
+
+      <div class="next-card">
+        <span class="next-icon">♡</span>
+        <div>
+          <p class="label">Próximo aniversario</p>
+          <h2 id="nextText">—</h2>
+          <p id="countdown" class="small"></p>
+        </div>
+      </div>
+
+      <div class="quote">“Dos personas, una historia y muchos recuerdos por crear.” ❤️</div>
+
+      <button class="primary" onclick="showSettings()">⚙️ Configurar nuestra historia</button>
+    </section>
+
+    <section id="settings" class="screen">
+      <button class="back" onclick="showHome()">‹ Volver</button>
+      <p class="eyebrow">PERSONALIZA LA APP</p>
+      <h1>Nuestra historia</h1>
+
+      <div class="form-card">
+        <label>Nombre de él</label>
+        <input id="name1" type="text" maxlength="30" placeholder="Angel">
+
+        <label>Nombre de ella</label>
+        <input id="name2" type="text" maxlength="30" placeholder="Ashley">
+
+        <label>Fecha de aniversario</label>
+        <input id="anniversary" type="date">
+
+        <button class="primary" onclick="saveSettings()">Guardar cambios ❤️</button>
+      </div>
+
+      <div class="info">
+        <strong>🔔 Recordatorios</strong>
+        <p>Esta primera versión guarda toda la información en tu iPhone. En la siguiente versión podemos añadir recordatorios y notificaciones de aniversario.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+NUESTRA APP DE ANIVERSARIOS ❤️
+
+Esta es la primera versión de la app para Angel y Ashley.
+
+Incluye:
+- Nombres personalizables
+- Fecha de aniversario
+- Contador de meses y días
+- Próximo aniversario
+- Instalación como app PWA en iPhone
+
+NOTA:
+Para que Safari permita "Añadir a pantalla de inicio" y el service worker funcionen correctamente,
+la app debe publicarse en un sitio HTTPS (por ejemplo GitHub Pages). Abrir el HTML como archivo local
+sirve para probar el diseño en una computadora, pero no para instalarla completamente como PWA.
+
+La fecha inicial está puesta como 3 de abril de 2026; puedes cambiarla desde Configuración.

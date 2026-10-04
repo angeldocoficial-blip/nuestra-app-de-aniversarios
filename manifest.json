@@ -1,0 +1,10 @@
+{
+  "name": "Nuestra app de aniversarios",
+  "short_name": "Nuestros aniversarios",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fff7fa",
+  "theme_color": "#fff7fa",
+  "lang": "es-MX",
+  "description": "La app de aniversarios de Angel y Ashley."
+}
