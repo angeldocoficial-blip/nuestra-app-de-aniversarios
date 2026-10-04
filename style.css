@@ -24,3 +24,22 @@ h1{font-family:Georgia,serif;font-weight:500;text-align:center;font-size:39px;li
 .info{padding:17px;color:#795d67;font-size:13px;line-height:1.5}.info strong{color:#351d27}.info p{margin:6px 0 0}
 #hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:10}.falling-heart{position:absolute;top:-30px;animation:fall linear forwards;font-size:20px;opacity:.8}@keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:0}}
 @media(prefers-color-scheme:dark){body{background:linear-gradient(145deg,#1e1519,#28161e);color:#fff0f4}.subtitle,.small,.quote,.info,.letter p{color:#cdb5bd}.card,.next-card,.form-card,.info,.song-card,.special,.menu button,.letter{background:rgba(48,30,38,.9);border-color:rgba(255,255,255,.08)}.form-card label{color:#e3cdd4}.form-card input,.form-card textarea{background:#251920;color:#fff0f4;border-color:#5a3c48}}
+
+.menu{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:18px 0}
+.menu button{min-height:72px;border:1px solid rgba(182,79,115,.12);background:rgba(255,255,255,.72);border-radius:18px;color:#6e3048;font-size:22px;box-shadow:0 8px 20px rgba(94,39,59,.06);cursor:pointer}
+.menu button span{display:block;font-size:10px;font-weight:700;margin-top:5px}
+.song-card{margin-top:16px;padding:24px;text-align:center;border-radius:24px;background:linear-gradient(145deg,#fff,#fff0f5);border:1px solid rgba(182,79,115,.12);box-shadow:0 12px 30px rgba(94,39,59,.08)}
+.song-note{font-size:34px;margin-bottom:4px}
+.song-card h3{font-family:Georgia,serif;font-size:24px;margin:5px 0}
+.song-button{display:inline-block;margin-top:12px;padding:12px 18px;border-radius:999px;background:#b64f73;color:white;text-decoration:none;font-weight:700}
+.timeline{position:relative;margin:24px 0 10px;padding-left:12px}
+.timeline:before{content:"";position:absolute;left:21px;top:8px;bottom:8px;width:2px;background:rgba(182,79,115,.2)}
+.timeline-item{position:relative;display:flex;gap:14px;margin:0 0 18px}
+.timeline-dot{position:relative;z-index:1;flex:0 0 20px;width:20px;height:20px;border-radius:50%;background:#fff0f5;color:#b64f73;display:grid;place-items:center;font-size:10px;border:1px solid rgba(182,79,115,.25)}
+.timeline-card{flex:1;background:rgba(255,255,255,.8);border:1px solid rgba(182,79,115,.12);border-radius:20px;padding:16px;box-shadow:0 8px 22px rgba(94,39,59,.06)}
+.timeline-card .date{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#b64f73;font-weight:800}
+.timeline-card h3{margin:6px 0 8px;font-family:Georgia,serif}
+.timeline-card p{margin:0;line-height:1.55;white-space:pre-wrap}
+.delete-memory{margin-top:12px;border:0;background:none;color:#b64f73;font-size:12px;cursor:pointer}
+.version{text-align:center;color:#b98b9a;font-size:10px;padding:4px 0 22px}
+@media(max-width:480px){.menu{grid-template-columns:repeat(3,1fr)}}

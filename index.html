@@ -51,6 +51,7 @@
       <button onclick="showSection('memories')">📸<span>Recuerdos</span></button>
       <button onclick="showSection('letters')">💌<span>Cartas</span></button>
       <button onclick="showSection('music')">🎵<span>Nuestra canción</span></button>
+      <button onclick="showSection('history')">📖<span>Nuestra historia</span></button>
       <button onclick="showSettings()">⚙️<span>Configuración</span></button>
     </nav>
 
@@ -98,6 +99,25 @@
     <div id="songCard" class="song-card"></div>
   </section>
 
+  <section id="history" class="screen">
+    <button class="back" onclick="showHome()">‹ Volver</button>
+    <p class="eyebrow">LOS MOMENTOS QUE NOS HICIERON NOSOTROS</p>
+    <h1>Nuestra historia 📖</h1>
+    <p class="subtitle">Guarda los momentos que quieres recordar para siempre.</p>
+
+    <div class="form-card">
+      <label>Fecha del momento</label>
+      <input id="memoryDate" type="date">
+      <label>Título</label>
+      <input id="memoryTitle" type="text" maxlength="80" placeholder="Ej. Nuestra primera cita ❤️">
+      <label>¿Qué pasó?</label>
+      <textarea id="memoryText" maxlength="1200" placeholder="Cuéntanos ese recuerdo..."></textarea>
+      <button class="primary" onclick="saveMemory()">Agregar a nuestra historia ❤️</button>
+    </div>
+
+    <div id="timeline" class="timeline"></div>
+  </section>
+
   <section id="settings" class="screen">
     <button class="back" onclick="showHome()">‹ Volver</button>
     <p class="eyebrow">PERSONALIZA LA APP</p>
@@ -125,10 +145,11 @@
 
     <div class="info">
       <strong>🔔 Recordatorios</strong>
-      <p>La app está preparada para recordatorios. En iPhone, las notificaciones de una PWA requieren permiso y una configuración de notificaciones web; lo añadiremos en la siguiente etapa para que el aviso llegue de verdad aunque la app no esté abierta.</p>
+      <p>La app está preparada para recordatorios. En iPhone, las notificaciones de una PWA requieren permiso y una configuración de notificaciones web; la app ya queda preparada para una futura etapa de notificaciones web reales.</p>
     </div>
   </section>
 </main>
+<p class="version">Nuestra app de aniversarios · V3 ❤️</p>
 <script src="app.js"></script>
 </body>
 </html>

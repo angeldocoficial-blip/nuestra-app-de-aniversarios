@@ -1,4 +1,28 @@
-Nuestra app de aniversarios v2 ❤️
-Incluye portada con foto, galería de recuerdos, cartas, canción, frase personalizable,
-pantalla especial de aniversario y corazones animados.
-Los datos se guardan localmente en el dispositivo.
+Nuestra app de aniversarios V3 ❤️
+
+NOVEDADES:
+- Aniversarios MENSUALES: el próximo aniversario se calcula cada mes.
+- Contador de meses y días juntos.
+- "Perfecta" — Miranda! queda como canción predeterminada.
+- Puedes cambiar la canción, artista y enlace cuando quieras.
+- Nueva sección "Nuestra historia" para guardar recuerdos con fecha, título y descripción.
+- Galería de fotos, cartas, foto de portada y frase personalizable.
+- Pantalla especial y corazones animados el día del aniversario.
+- Conserva los datos guardados anteriormente en localStorage (si ya usabas la V2).
+
+IMPORTANTE:
+Los datos de fotos, cartas y recuerdos se guardan en el navegador del dispositivo. No se sincronizan automáticamente entre dos teléfonos.
+La canción se abre mediante el enlace que guardes; la app no aloja el audio.
+
+PARA ACTUALIZAR GITHUB PAGES:
+1. Descomprime este ZIP.
+2. En tu repositorio "nuestra-app-aniversarios", sube y reemplaza:
+   index.html
+   style.css
+   app.js
+   manifest.json
+   sw.js
+   LEEME.txt
+3. Haz Commit changes.
+4. Espera un poco y vuelve a abrir tu página.
+5. Si ves la versión vieja, cierra Safari/Chrome y vuelve a abrir la app; el service worker de V3 limpia la caché anterior.
