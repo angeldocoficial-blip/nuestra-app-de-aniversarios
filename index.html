@@ -1,72 +1,134 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#fff7fa">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="Nuestra app">
-  <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="style.css">
-  <title>Nuestra app de aniversarios</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fff7fa">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Nuestra app">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+<title>Nuestra app de aniversarios</title>
 </head>
 <body>
-  <main class="app">
-    <section id="home" class="screen active">
-      <div class="heart">♥</div>
+<div id="hearts"></div>
+<main class="app">
+  <section id="home" class="screen active">
+    <div class="hero">
+      <div id="coverPhoto" class="cover"><span>♥</span></div>
       <p class="eyebrow">NUESTRA HISTORIA</p>
       <h1><span id="displayName1">Angel</span> &amp; <span id="displayName2">Ashley</span></h1>
       <p class="subtitle">Un amor, una historia y muchos aniversarios por celebrar.</p>
+    </div>
 
-      <div class="card">
-        <p class="label">Llevamos juntos</p>
-        <div class="counter">
-          <div><strong id="months">0</strong><span>meses</span></div>
-          <div><strong id="days">0</strong><span>días</span></div>
-        </div>
-        <p id="sinceText" class="small"></p>
+    <div id="anniversaryBanner" class="special hidden">
+      <div class="sparkles">✨ ❤️ ✨</div>
+      <h2>¡Feliz aniversario!</h2>
+      <p id="specialText"></p>
+      <p class="love">Te amo. ❤️</p>
+    </div>
+
+    <div class="card">
+      <p class="label">Llevamos juntos</p>
+      <div class="counter">
+        <div><strong id="months">0</strong><span>meses</span></div>
+        <div><strong id="days">0</strong><span>días</span></div>
       </div>
+      <p id="sinceText" class="small"></p>
+    </div>
 
-      <div class="next-card">
-        <span class="next-icon">♡</span>
-        <div>
-          <p class="label">Próximo aniversario</p>
-          <h2 id="nextText">—</h2>
-          <p id="countdown" class="small"></p>
-        </div>
+    <div class="next-card">
+      <span class="next-icon">♡</span>
+      <div>
+        <p class="label">Próximo aniversario</p>
+        <h2 id="nextText">—</h2>
+        <p id="countdown" class="small"></p>
       </div>
+    </div>
 
-      <div class="quote">“Dos personas, una historia y muchos recuerdos por crear.” ❤️</div>
+    <nav class="menu">
+      <button onclick="showSection('memories')">📸<span>Recuerdos</span></button>
+      <button onclick="showSection('letters')">💌<span>Cartas</span></button>
+      <button onclick="showSection('music')">🎵<span>Nuestra canción</span></button>
+      <button onclick="showSettings()">⚙️<span>Configuración</span></button>
+    </nav>
 
-      <button class="primary" onclick="showSettings()">⚙️ Configurar nuestra historia</button>
-    </section>
+    <div class="quote">“Dos personas, una historia y muchos recuerdos por crear.” ❤️</div>
+  </section>
 
-    <section id="settings" class="screen">
-      <button class="back" onclick="showHome()">‹ Volver</button>
-      <p class="eyebrow">PERSONALIZA LA APP</p>
-      <h1>Nuestra historia</h1>
+  <section id="memories" class="screen">
+    <button class="back" onclick="showHome()">‹ Volver</button>
+    <p class="eyebrow">NUESTROS MOMENTOS</p>
+    <h1>Recuerdos 📸</h1>
+    <p class="subtitle">Agrega fotos de ustedes y guarda aquí sus momentos favoritos.</p>
+    <div id="gallery" class="gallery"></div>
+    <label class="upload">
+      <span>＋ Agregar fotos</span>
+      <input id="photoInput" type="file" accept="image/*" multiple>
+    </label>
+    <button class="danger" onclick="clearPhotos()">Eliminar todas las fotos</button>
+  </section>
 
-      <div class="form-card">
-        <label>Nombre de él</label>
-        <input id="name1" type="text" maxlength="30" placeholder="Angel">
+  <section id="letters" class="screen">
+    <button class="back" onclick="showHome()">‹ Volver</button>
+    <p class="eyebrow">PALABRAS PARA NOSOTROS</p>
+    <h1>Cartas 💌</h1>
+    <div class="form-card">
+      <input id="letterTitle" type="text" maxlength="60" placeholder="Título de la carta">
+      <textarea id="letterText" maxlength="3000" placeholder="Escribe algo para tu persona favorita..."></textarea>
+      <button class="primary" onclick="saveLetter()">Guardar carta ❤️</button>
+    </div>
+    <div id="lettersList"></div>
+  </section>
 
-        <label>Nombre de ella</label>
-        <input id="name2" type="text" maxlength="30" placeholder="Ashley">
+  <section id="music" class="screen">
+    <button class="back" onclick="showHome()">‹ Volver</button>
+    <p class="eyebrow">UN SONIDO ESPECIAL</p>
+    <h1>Nuestra canción 🎵</h1>
+    <div class="form-card">
+      <label>Nombre de la canción</label>
+      <input id="songName" type="text" maxlength="100" placeholder="Ej. Perfect — Ed Sheeran">
+      <label>Artista</label>
+      <input id="songArtist" type="text" maxlength="100" placeholder="Artista">
+      <label>Enlace de la canción</label>
+      <input id="songUrl" type="url" placeholder="https://...">
+      <button class="primary" onclick="saveSong()">Guardar canción 🎵</button>
+    </div>
+    <div id="songCard" class="song-card"></div>
+  </section>
 
-        <label>Fecha de aniversario</label>
-        <input id="anniversary" type="date">
+  <section id="settings" class="screen">
+    <button class="back" onclick="showHome()">‹ Volver</button>
+    <p class="eyebrow">PERSONALIZA LA APP</p>
+    <h1>Nuestra historia</h1>
+    <div class="form-card">
+      <label>Nombre de él</label>
+      <input id="name1" type="text" maxlength="30" placeholder="Angel">
+      <label>Nombre de ella</label>
+      <input id="name2" type="text" maxlength="30" placeholder="Ashley">
+      <label>Fecha de aniversario</label>
+      <input id="anniversary" type="date">
+      <label>Frase de ustedes</label>
+      <input id="coupleQuote" type="text" maxlength="180" placeholder="Nuestra frase especial">
+      <button class="primary" onclick="saveSettings()">Guardar cambios ❤️</button>
+    </div>
 
-        <button class="primary" onclick="saveSettings()">Guardar cambios ❤️</button>
-      </div>
+    <div class="form-card">
+      <h3>🖼️ Foto principal</h3>
+      <p class="small">Elige una foto para la portada de la app.</p>
+      <label class="upload">
+        <span>Elegir foto de portada</span>
+        <input id="coverInput" type="file" accept="image/*">
+      </label>
+    </div>
 
-      <div class="info">
-        <strong>🔔 Recordatorios</strong>
-        <p>Esta primera versión guarda toda la información en tu iPhone. En la siguiente versión podemos añadir recordatorios y notificaciones de aniversario.</p>
-      </div>
-    </section>
-  </main>
-
-  <script src="app.js"></script>
+    <div class="info">
+      <strong>🔔 Recordatorios</strong>
+      <p>La app está preparada para recordatorios. En iPhone, las notificaciones de una PWA requieren permiso y una configuración de notificaciones web; lo añadiremos en la siguiente etapa para que el aviso llegue de verdad aunque la app no esté abierta.</p>
+    </div>
+  </section>
+</main>
+<script src="app.js"></script>
 </body>
 </html>

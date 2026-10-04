@@ -1,38 +1,26 @@
 *{box-sizing:border-box}
 :root{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;color:#351d27;background:#fff7fa}
-body{margin:0;min-height:100vh;background:linear-gradient(145deg,#fff7fa 0%,#ffeef4 55%,#fff 100%)}
+body{margin:0;min-height:100vh;background:linear-gradient(145deg,#fff7fa,#ffeef4 55%,#fff);overflow-x:hidden}
 .app{width:100%;max-width:620px;margin:auto;min-height:100vh;padding:env(safe-area-inset-top) 22px env(safe-area-inset-bottom)}
-.screen{display:none;min-height:100vh;padding:42px 0 35px}
-.screen.active{display:block}
-.heart{font-size:58px;text-align:center;line-height:1;margin:15px 0 22px;text-shadow:0 8px 20px rgba(184,74,111,.18)}
+.screen{display:none;min-height:100vh;padding:32px 0 38px}.screen.active{display:block}
+.hero{text-align:center}.cover{width:108px;height:108px;border-radius:50%;margin:8px auto 18px;background:linear-gradient(135deg,#f8c8d8,#fff);display:grid;place-items:center;overflow:hidden;box-shadow:0 12px 30px rgba(94,39,59,.12);border:5px solid rgba(255,255,255,.8)}.cover img{width:100%;height:100%;object-fit:cover}.cover span{font-size:42px;color:#b64f73}
 .eyebrow{letter-spacing:3px;font-size:11px;font-weight:800;text-align:center;color:#b64f73;margin:0 0 10px}
-h1{font-family:Georgia,serif;font-weight:500;text-align:center;font-size:39px;line-height:1.12;margin:0 0 12px}
-.subtitle{text-align:center;color:#795d67;font-size:15px;line-height:1.55;margin:0 auto 28px;max-width:420px}
-.card,.next-card,.form-card,.info{background:rgba(255,255,255,.78);border:1px solid rgba(182,79,115,.12);border-radius:24px;box-shadow:0 12px 35px rgba(94,39,59,.08);backdrop-filter:blur(10px)}
-.card{padding:23px;text-align:center}
-.label{margin:0 0 9px;color:#8a6b76;font-size:12px;text-transform:uppercase;letter-spacing:1.4px;font-weight:700}
-.counter{display:flex;justify-content:center;gap:36px;margin:8px 0 4px}
-.counter strong{display:block;font-family:Georgia,serif;font-size:39px;font-weight:500}
-.counter span{display:block;color:#8a6b76;font-size:12px}
+h1{font-family:Georgia,serif;font-weight:500;text-align:center;font-size:39px;line-height:1.12;margin:0 0 12px}h2{font-family:Georgia,serif;font-weight:500}
+.subtitle{text-align:center;color:#795d67;font-size:15px;line-height:1.55;margin:0 auto 24px;max-width:440px}
+.card,.next-card,.form-card,.info,.song-card,.special{background:rgba(255,255,255,.8);border:1px solid rgba(182,79,115,.12);border-radius:24px;box-shadow:0 12px 35px rgba(94,39,59,.08);backdrop-filter:blur(10px)}
+.card{padding:23px;text-align:center}.label{margin:0 0 9px;color:#8a6b76;font-size:12px;text-transform:uppercase;letter-spacing:1.4px;font-weight:700}
+.counter{display:flex;justify-content:center;gap:42px;margin:8px 0 4px}.counter strong{display:block;font-family:Georgia,serif;font-size:39px;font-weight:500}.counter span{display:block;color:#8a6b76;font-size:12px}
 .small{color:#8a6b76;font-size:13px;margin:5px 0 0}
-.next-card{margin-top:15px;padding:20px;display:flex;gap:15px;align-items:center}
-.next-icon{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#fff0f4;color:#b64f73;font-size:29px}
-.next-card h2{margin:0;font-family:Georgia,serif;font-weight:500;font-size:22px}
-.next-card .label{margin-bottom:4px}
-.quote{text-align:center;font-family:Georgia,serif;font-style:italic;color:#795d67;font-size:15px;line-height:1.6;margin:25px 14px}
-.primary{width:100%;border:0;border-radius:17px;padding:15px 18px;background:#b64f73;color:#fff;font-size:15px;font-weight:700;box-shadow:0 9px 20px rgba(182,79,115,.22);cursor:pointer}
-.primary:active{transform:scale(.99)}
-.back{background:none;border:0;color:#b64f73;font-size:16px;padding:5px 0 25px;cursor:pointer}
-.form-card{padding:22px}
-.form-card label{display:block;font-size:13px;font-weight:700;margin:0 0 7px;color:#684d58}
-.form-card input{width:100%;padding:14px 13px;border:1px solid #ead4dc;border-radius:13px;background:#fff;margin:0 0 17px;font-size:16px;color:#351d27;outline:none}
-.form-card input:focus{border-color:#b64f73;box-shadow:0 0 0 3px rgba(182,79,115,.1)}
-.info{margin-top:15px;padding:17px;color:#795d67;font-size:13px;line-height:1.5}
-.info strong{color:#351d27}
-.info p{margin:6px 0 0}
-@media(prefers-color-scheme:dark){
- body{background:linear-gradient(145deg,#1e1519,#28161e);color:#fff0f4}
- .subtitle,.small,.quote,.info{color:#cdb5bd}
- .card,.next-card,.form-card,.info{background:rgba(48,30,38,.85);border-color:rgba(255,255,255,.08)}
- .form-card label{color:#e3cdd4}.form-card input{background:#251920;color:#fff0f4;border-color:#5a3c48}
-}
+.next-card{margin-top:15px;padding:20px;display:flex;gap:15px;align-items:center}.next-icon{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#fff0f4;color:#b64f73;font-size:29px}.next-card h2{margin:0;font-size:22px}.next-card .label{margin-bottom:4px}
+.menu{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:18px 0}.menu button{border:0;background:rgba(255,255,255,.72);border-radius:17px;padding:13px 4px;color:#684d58;font-size:21px;box-shadow:0 7px 20px rgba(94,39,59,.06);cursor:pointer}.menu span{display:block;font-size:10px;margin-top:6px;font-weight:700}
+.quote{text-align:center;font-family:Georgia,serif;font-style:italic;color:#795d67;font-size:15px;line-height:1.6;margin:23px 14px}
+.back{background:none;border:0;color:#b64f73;font-size:16px;padding:5px 0 25px;cursor:pointer}.form-card{padding:20px;margin-bottom:15px}.form-card label{display:block;font-size:13px;font-weight:700;margin:0 0 7px;color:#684d58}.form-card input,.form-card textarea{width:100%;padding:14px 13px;border:1px solid #ead4dc;border-radius:13px;background:#fff;margin:0 0 16px;font-size:16px;color:#351d27;outline:none;font-family:inherit}.form-card textarea{min-height:170px;resize:vertical}.form-card input:focus,.form-card textarea:focus{border-color:#b64f73;box-shadow:0 0 0 3px rgba(182,79,115,.1)}
+.primary{width:100%;border:0;border-radius:17px;padding:15px 18px;background:#b64f73;color:#fff;font-size:15px;font-weight:700;box-shadow:0 9px 20px rgba(182,79,115,.22);cursor:pointer}.danger{width:100%;border:0;background:transparent;color:#9b536d;font-size:12px;margin-top:12px}
+.upload{display:block;width:100%;border:2px dashed #dca7b9;border-radius:17px;padding:17px;text-align:center;color:#b64f73;font-weight:700;background:rgba(255,255,255,.55);cursor:pointer;margin-bottom:10px}.upload input{display:none}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:14px}.photo{position:relative;aspect-ratio:1;border-radius:18px;overflow:hidden;background:#f8dfe7;box-shadow:0 7px 18px rgba(94,39,59,.08)}.photo img{width:100%;height:100%;object-fit:cover}.photo button{position:absolute;right:7px;top:7px;border:0;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.85);color:#8b3e5b}
+.letter{padding:19px;margin-bottom:12px;background:rgba(255,255,255,.78);border-radius:20px;box-shadow:0 8px 25px rgba(94,39,59,.07);border:1px solid rgba(182,79,115,.1)}.letter h3{font-family:Georgia,serif;margin:0 0 8px}.letter p{white-space:pre-wrap;color:#684d58;line-height:1.55;margin:0}.letter .date{font-size:11px;color:#a17e89;margin-top:12px}
+.song-card{padding:20px;margin-top:10px;text-align:center}.song-card h3{font-family:Georgia,serif;margin:0 0 5px}.song-card a{display:inline-block;margin-top:12px;color:#b64f73;font-weight:700;text-decoration:none}
+.special{padding:25px;text-align:center;margin-bottom:15px;background:linear-gradient(135deg,#fff,#ffe8f0)}.special h2{font-size:30px;margin:7px 0}.special p{color:#795d67}.special .love{font-family:Georgia,serif;font-size:18px;color:#b64f73}.sparkles{font-size:24px}.hidden{display:none}
+.info{padding:17px;color:#795d67;font-size:13px;line-height:1.5}.info strong{color:#351d27}.info p{margin:6px 0 0}
+#hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:10}.falling-heart{position:absolute;top:-30px;animation:fall linear forwards;font-size:20px;opacity:.8}@keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:0}}
+@media(prefers-color-scheme:dark){body{background:linear-gradient(145deg,#1e1519,#28161e);color:#fff0f4}.subtitle,.small,.quote,.info,.letter p{color:#cdb5bd}.card,.next-card,.form-card,.info,.song-card,.special,.menu button,.letter{background:rgba(48,30,38,.9);border-color:rgba(255,255,255,.08)}.form-card label{color:#e3cdd4}.form-card input,.form-card textarea{background:#251920;color:#fff0f4;border-color:#5a3c48}}
